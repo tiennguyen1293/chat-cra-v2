@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import socket from 'socket.io-client';
+import io from 'socket.io-client';
 import './App.css';
+
+const socket = io.connect('http://localhost:8000');
 
 class App extends Component {
   state = {
     text: undefined,
   };
-  componentDidMount() {
-    const ioClient = socket.connect('http://localhost:8000');
-    ioClient.on('seq-num', msg => console.info(msg));
-  }
+
+  componentDidMount() {}
+
   handleChange = e => {
     const text = e.target.value;
+    socket.emit('new-message', text);
     this.setState({ text });
   };
 
