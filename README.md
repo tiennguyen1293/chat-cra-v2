@@ -2,9 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `Package`
 
-socket.io
-socket.io-client
-dotenv
+[socket.io](https://socket.io/) <br>
+[socket.io-client](https://socket.io/) <br>
+[dotenv](https://github.com/motdotla/dotenv) <br>
 
 ## Available Scripts
 
