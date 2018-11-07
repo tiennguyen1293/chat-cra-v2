@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import socket from 'socket.io-client';
 import './App.css';
 
 class App extends Component {
+  state = {
+    text: undefined,
+  };
+  componentDidMount() {
+    const ioClient = socket.connect('http://localhost:8000');
+    ioClient.on('seq-num', msg => console.info(msg));
+  }
+  handleChange = e => {
+    const text = e.target.value;
+    this.setState({ text });
+  };
+
   render() {
+    const { text } = this.state;
+    console.log(text);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <input type="text" onChange={this.handleChange} />
+        <p>{text}</p>
       </div>
     );
   }
