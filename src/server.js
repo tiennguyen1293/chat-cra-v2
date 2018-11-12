@@ -4,7 +4,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT_SERVER || 8000;
 var INDEX = path.join(__dirname, 'index.html');
 var numUsers = 0;
 
