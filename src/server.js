@@ -1,7 +1,11 @@
-var app = require('express')();
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var path = require('path');
 
+var PORT = process.env.PORT || 8000;
+var INDEX = path.join(__dirname, 'index.html');
 var numUsers = 0;
 
 io.on('connection', function(socket) {
@@ -64,6 +68,7 @@ io.on('connection', function(socket) {
   });
 });
 
-http.listen(process.env.PORT_SERVER || 8000, function() {
-  console.log(`Server start on *:${process.env.PORT_SERVER || 8000}`);
+app.use((req, res) => res.sendFile(INDEX) )
+http.listen(PORT, function() {
+  console.log(`Server start on *:${PORT}`);
 });

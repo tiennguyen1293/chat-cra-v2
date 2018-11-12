@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io.connect(`http://localhost:${process.env.PORT_SERVER || 8000}`);
+const socket = io.connect(process.env.SERVER_URL || 'http://localhost:8000');
 
 class App extends Component {
   state = {
