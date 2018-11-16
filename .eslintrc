@@ -1,0 +1,67 @@
+{
+  "extends": ["airbnb", "react-app"],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "no-nested-ternary": 0,
+    "no-multi-assign": 0,
+    "no-restricted-globals": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/iframe-has-title": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/no-typos": 0,
+    "react/prop-types": 0,
+    "react/no-unused-state": 0,
+    "react/no-unused-prop-types": 1,
+    "react/default-props-match-prop-types": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/no-array-index-key": 0,
+    "react/jsx-max-props-per-line": 0,
+    "react/require-default-props": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-closing-bracket-location": 1,
+    "react/prefer-stateless-function": [
+      0,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "prefer-promise-reject-errors": 0,
+    "function-paren-newline": 0,
+    "prefer-destructuring": 0,
+    "object-curly-newline": 0,
+    "linebreak-style": 0,
+    "no-constant-condition": [2, { "checkLoops": false }],
+    "no-unused-vars": 1,
+    "arrow-body-style": 0,
+    "spaced-comment": 1,
+    "semi": 1,
+    "prefer-const": 1,
+    "no-useless-constructor": 1,
+    "space-before-function-paren": 1,
+    "class-methods-use-this": 1,
+    "arrow-parens": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  }
+}

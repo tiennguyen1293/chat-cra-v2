@@ -27,7 +27,7 @@ class App extends Component {
     });
 
     socket.on('new-message', (data) => {
-      this.updateMessage(data)
+      this.updateMessage(data);
     });
 
     socket.on('typing', (data) => {
@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   addChatTyping = (data) => {
-    this.setState({usernameTyping: data.username, typing: true});
+    this.setState({ usernameTyping: data.username, typing: true });
   }
 
   handleChange = (e) => {
@@ -44,7 +44,7 @@ class App extends Component {
     const value = e.target.value;
     this.setState({ [name]: value });
 
-    if(name ==='message' && value) {
+    if (name === 'message' && value) {
       this.setState({ typing: true });
       socket.emit('typing');
     } else {
@@ -59,7 +59,7 @@ class App extends Component {
     socket.emit('add-user', username);
     this.setState({
       username: '',
-    })
+    });
   };
 
   handleSubmitMessage = e => {
@@ -69,7 +69,7 @@ class App extends Component {
     this.setState({
       dataMessage: [...dataMessage, { username, message, me: true }],
       message: '',
-    })
+    });
   }
 
   addParticipantsMessage = data => {
@@ -84,7 +84,7 @@ class App extends Component {
 
   updateMessage = data => {
     const { dataMessage } = this.state;
-    this.setState({ dataMessage: [...dataMessage, {...data, me: false}] })
+    this.setState({ dataMessage: [...dataMessage, { ...data, me: false }] });
   }
 
   render() {
@@ -104,7 +104,7 @@ class App extends Component {
           </form>
         )}
         {dataMessage && dataMessage.map((item, index) => (
-          <React.Fragment key={item.username+index}>
+          <React.Fragment key={item.username + index}>
             <h1>{item.me ? 'Me:' : `Username: ${item.username}`}</h1>
             <p>{item.message}</p>
           </React.Fragment>
