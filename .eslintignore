@@ -6,3 +6,5 @@ src/serviceWorker.js
 _*/**
 ./**/*.spec.js
 ./**/**-jest.js
+
+src/server.js
