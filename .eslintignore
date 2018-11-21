@@ -7,4 +7,4 @@ _*/**
 ./**/*.spec.js
 ./**/**-jest.js
 
-src/server.js
+server/server.js
